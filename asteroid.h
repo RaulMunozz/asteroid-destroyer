@@ -18,7 +18,9 @@ public:
 
     // Load the 3D model once for all asteroids
     static void loadModel() {
-        model.loadModel("models/asteroid/asteroid.fbx", true);
+        if (!model.loadModel("models/asteroid/asteroid.fbx", true)) {
+            ofLogWarning("Asteroid") << "Missing or invalid models/asteroid/asteroid.fbx";
+        }
 
         model.setScaleNormalization(false);
         model.setScale(0.01, 0.01, 0.01);

@@ -24,3 +24,8 @@ It includes lighting, textures and sound effects.
 The original project uses third-party 3D models, textures and sounds. Those
 asset files are not included in this repository because of their size and
 licence. You need an openFrameworks 0.12.1 setup to build and run the code.
+
+The executable reads model and sound files from fixed relative paths inside the
+working directory. Only place trusted assets in those locations; a modified
+model or audio file can crash the third-party loaders. Missing assets now
+produce a warning in the console instead of failing silently.

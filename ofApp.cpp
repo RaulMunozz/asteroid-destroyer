@@ -15,6 +15,9 @@ void ofApp::setup(){
 
     // Load and setup spaceship model
     bool loaded = spaceship.loadModel("models/spaceship/spaceship.fbx", true);
+    if (!loaded) {
+        ofLogWarning("ofApp") << "Missing or invalid models/spaceship/spaceship.fbx";
+    }
     spaceship.setScale(0.6, 0.6, 0.6);
     spaceship.setRotation(0, 180, 0, 1, 0);
 

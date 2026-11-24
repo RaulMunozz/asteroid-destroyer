@@ -2,7 +2,7 @@
 #include "ofMain.h"
 #include "ofxAssimpModelLoader.h"
 #include "Missile.h"
-#include "Asteroid.h"
+#include "asteroid.h"
 #include <vector>
 
 class ofApp : public ofBaseApp {
