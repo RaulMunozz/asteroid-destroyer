@@ -1,2 +1,2 @@
-#include "Asteroid.h"
+#include "asteroid.h"
 ofxAssimpModelLoader Asteroid::model;
