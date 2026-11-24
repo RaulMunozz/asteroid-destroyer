@@ -40,7 +40,9 @@ for path in sources:
     for include in re.findall(r'#\s*include\s*"([^"]+)"', text):
         if include in EXTERNAL_HEADERS:
             continue
-        if (ROOT / include).is_file():
+        # Compare exact names so the check also works on case-insensitive filesystems.
+        parent = (ROOT / include).parent
+        if any(p.is_file() and p.name == Path(include).name for p in parent.glob("*")):
             continue
         matches = [p for p in ROOT.rglob("*") if p.is_file() and p.name.lower() == include.lower()]
         if matches:
